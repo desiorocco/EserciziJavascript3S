@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Indovina Numero</title>
+    </head>
+    <body>
+        <h2>Indovina il numero</h2>
+        <p>Inserisci un numero da 1 a 10 e clicca sul bottone!
+        </p>
+        <input type="text" id="num">
+        <input type="button" value="Clicca" onclick="indovina()">
+        <p id="risultato">
+        </p>
+        <script>
+            function indovina(){
+                var numero=Number(document.getElementById("num").value)
+                var segreto = Math.floor(Math.random() * 10) + 1
+
+                if (numero == segreto)
+                    document.getElementById("risultato").innerHTML="Hai indovinato!"
+                else
+                    document.getElementById("risultato").innerHTML="Non hai indovinato! è uscito il numero: "+segreto
+            }
+        </script>
+    </body>
+</html>

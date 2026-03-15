@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cambia testo</title>
+        <script>
+            var contatore=0
+            function clicca(){
+                contatore+=1
+                if (contatore==1)
+                    document.getElementById("nome").innerHTML="Ciao adele"
+                else if (contatore==2)
+                        document.getElementById("nome").innerHTML="Suca"
+                     else  
+                        document.getElementById("nome").innerHTML="Ti amo! :P"
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="clicca()">Clicca</button>
+        <p id="nome">
+        </p>
+    </body>
+</html>

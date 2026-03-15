@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cambio Testo</title>
+    </head>
+    <body>
+        <p id="prova">
+            Questo è il testo del nostro paragrafo
+        </p>
+        <input type="button" name="cambiare" value="Cambia" onclick=cambia()>
+        <script>
+            function cambia(){
+                var testo= prompt("Cambia il testo del paragrafo")
+                document.getElementById("prova").innerHTML=testo
+            }
+        </script>
+    </body>
+</html>

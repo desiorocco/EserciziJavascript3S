@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contatore di Click</title>
+        <script>
+            var conta=0
+            function contatore(){
+                conta+=1
+                document.getElementById("num").innerHTML=conta
+            if (conta>=10)
+                document.getElementById("num").style.color="red"
+                
+            }
+        </script>
+    </head>
+    <body>
+        <p id="num">0</p>
+        <button onclick="contatore()">Clicca</button>
+    </body>
+</html>
