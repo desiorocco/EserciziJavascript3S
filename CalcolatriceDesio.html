@@ -1,0 +1,107 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Calcolatrice Super</title>
+    </head>
+    <body>
+        <style>
+            button{
+                width: 50px;
+                height: 50px;
+            }
+            input{
+                width: 220px;
+                height: 25px;
+            }
+        </style>
+        <script>
+            let cosa;
+            let num, ris;
+            function divisione(){
+                num=document.getElementById("risultato").value;
+                cancella();
+                cosa=1;
+            }
+            function moltiplicazione(){
+                num=document.getElementById("risultato").value;
+                cancella();
+                cosa=2;
+            }
+            function somma(){
+                num=document.getElementById("risultato").value;
+                cancella();
+                cosa=3;
+            }
+            function differenza(){
+                num=document.getElementById("risultato").value;
+                cancella();
+                cosa=4;
+            }
+            function uguale(){
+                switch(cosa){
+                    case 1: 
+                        ris=num/document.getElementById("risultato").value;
+                        document.getElementById("risultato").value=ris;
+                        break;
+                    case 2:
+                        ris=num*document.getElementById("risultato").value;
+                        document.getElementById("risultato").value=ris;
+                        break;
+                    case 3:
+                        var num2=document.getElementById("risultato").value;
+                        ris=parseInt(num)+parseInt(num2);
+                        document.getElementById("risultato").value=ris;
+                        break;
+                    case 4:
+                        ris=num-document.getElementById("risultato").value;
+                        document.getElementById("risultato").value=ris;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            function addnum(valore){
+                document.getElementById("risultato").value += valore;
+            }
+            function cancella(){
+                document.getElementById("risultato").value=" ";
+            }
+            
+        </script>
+        <form name="calcolatrice">
+            <table>
+                <tr>
+                    <td colspan="4"><t1>CALCOLATRICE OVER THE TOP</t1></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="7" value="7" onclick="addnum(7)">7</button></td>
+                    <td><button type="button" id="8" value="8" onclick="addnum(8)">8</button></td>
+                    <td><button type="button" id="9" value="9" onclick="addnum(9)">9</button></td>
+                    <td><button type="button" id=":" value=":" onclick="divisione()">:</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="4" value="4" onclick="addnum(4)">4</button></td>
+                    <td><button type="button" id="5" value="5" onclick="addnum(5)">5</button></td>
+                    <td><button type="button" id="6" value="6" onclick="addnum(6)">6</button></td>
+                    <td><button type="button" id="*" value="*" onclick="moltiplicazione()">x</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="1" value="1" onclick="addnum(1)">1</button></td>
+                    <td><button type="button" id="2" value="2" onclick="addnum(2)">2</button></td>
+                    <td><button type="button" id="3" value="3" onclick="addnum(3)">3</button></td>
+                    <td><button type="button" id="-" value="-" onclick="differenza()">-</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="0" value="0" onclick="addnum(0)">0</button></td>
+                    <td><button type="button" id="c" value="c" onclick="cancella()">C</button></td>
+                    <td><button type="button" id="=" value="=" onclick="uguale()">=</button></td>
+                    <td><button type="button" id="+" value="+" onclick="somma()">+</button></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="text" id="risultato" disabled></td>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>
